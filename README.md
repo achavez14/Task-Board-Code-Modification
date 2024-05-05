@@ -5,6 +5,10 @@ The Task Board application provides a graphical depiction of project tasks arran
 
 ## Screenshots of My Application
 
+- ![Screenshot_1](./assets/images/Screenshot_(1).png)
+- ![Screenshot_2](./assets/images/Screenshot_(2).png)
+- ![Screenshot_3](./assets/images/Screenshot_(3).png)
+
 ## Link to Deployed Application
 https://achavez14.github.io/Task-Board-Code-Modification/
 
