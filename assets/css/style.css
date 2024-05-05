@@ -15,10 +15,10 @@ body {
   cursor: grab;
 }
 
-.task-nearing-deadline {
+.near-deadline {
   background-color: yellow;
 }
 
-.task-overdue {
+.overdue {
   background-color: red;
 }
