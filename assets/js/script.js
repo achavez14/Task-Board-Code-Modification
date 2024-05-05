@@ -10,10 +10,21 @@ function generateTaskId() {
     return newId;
 }
 
-// Function to create a task card
+// Function to create a task card with color coding based on deadline status
 function createTaskCard(task) {
+    const currentDate = dayjs();
+    const dueDate = dayjs(task.deadline);
+    const daysUntilDue = dueDate.diff(currentDate, 'day');
+
+    let deadlineClass = '';
+    if (daysUntilDue < 0) {
+        deadlineClass = 'overdue';
+    } else if (daysUntilDue <= 3) {
+        deadlineClass = 'near-deadline';
+    }
+
     const taskCard = `
-        <div class="card task-card mb-3" data-task-id="${task.id}">
+        <div class="card task-card mb-3 ${deadlineClass}" data-task-id="${task.id}">
             <div class="card-body">
                 <h5 class="card-title">${task.title}</h5>
                 <p class="card-text">${task.description}</p>
@@ -25,7 +36,7 @@ function createTaskCard(task) {
     return taskCard;
 }
 
-// Function to render the task list and make cards draggable
+// Function to render the task list with color-coded task cards
 function renderTaskList() {
     taskList.forEach(task => {
         const taskCard = createTaskCard(task);
